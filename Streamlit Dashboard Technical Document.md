@@ -4,7 +4,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
 
 # Table of Contents
 
-- [Requirements][#requirements]
+- [Requirements](#requirements)
 
 # Requirements
 
@@ -68,7 +68,7 @@ Streamlit is an otomatically dual theme site generator, which means that the app
 
 To do that create a **\***.streamlit**\*** folder and create a **\*\*\*\***\***\*\*\*\***config.toml**\*\*\*\***\***\*\*\*\*** file.
 
-![Untitled](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%201.png)
+![Untitled](images/Untitled1.png)
 
 Inside the file wrote as
 
@@ -101,7 +101,7 @@ def call_barComment(name):
 
 It is quite easy to cache any function you desire. Only put @st.cache before the function definition. Caching any function that is called several times with same inputs would increase the speed of the site.
 
-![Untitled](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%202.png)
+![Untitled](images/Untitled2.png)
 
 Note: especially use for loading data on several pages!!.
 
@@ -113,19 +113,19 @@ if you want to change how the header looks or footer or anything that is not cre
 
 1. Find the part you want to delete
 
-![Streamlit otomated footer](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%203.png)
+![Streamlit otomated footer](images/Untitled3.png)
 
 Streamlit otomated footer
 
 1. Right click and select inspect element
 
-![google developer console](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%204.png)
+![google developer console](images/Untitled4.png)
 
 google developer console
 
 1. Find the class name of the element
 
-![Untitled](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%205.png)
+![Untitled](images/Untitled5.png)
 
 1. In your css you can change it by calling the class name
 
@@ -158,11 +158,11 @@ This is the main file where the actual app is working. Therefore this is the pla
 
 Do not forget to define a icon in st.page_config as such
 
-![Untitled](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%206.png)
+![Untitled](images/Untitled6.png)
 
 After you call option-menu, you can create each page in the menu separately as in the below example.
 
-![Untitled](Streamlit%20Dashboard%20Technical%20Document%20291e1f0953a5476db9cc5f3c465a2702/Untitled%207.png)
+![Untitled](images/Untitled7.png)
 
 where you defined each page in separate file by defining **\*\***\***\*\***create_page()**\*\***\***\*\*** function.
 
