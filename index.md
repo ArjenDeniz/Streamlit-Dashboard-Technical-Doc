@@ -11,7 +11,8 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
 - [Tips](#tips)
   - [Base theme](#defining-base-theme)
   - [Functions](#use-functions-even-for-st.markdown)
-  - [CSS Trick](#applying-CSS-on-the-streamlit-template)
+  - [Applying CSS on streamlit template](#applying-CSS-on-the-streamlit-template)
+  - [Linked Button](#linked-button)
 - [Structure](#structure)
 - [Deployment](#deployment)
 - [Future Discussions](#future-discussions)
@@ -147,6 +148,18 @@ google developer console
 
 Be careful if the style change that you implemented did not shown, use “ !important” after your argument(s).
 
+## Linked button
+
+Weirdly enough streamlit buttons have hard time implementing any link inside. What that means is that you have to either create [js adaptation](https://discuss.streamlit.io/t/how-to-link-a-button-to-a-webpage/1661/4?u=arjendeniz) (which did not work on ESEM Report) or use [markdown style](https://discuss.streamlit.io/t/how-to-link-a-button-to-a-webpage/1661/8?u=arjendeniz). To combine the later markdown style with a button created, I implemented a simple design as below
+
+```html
+<button class="classNames" markdown="1">
+  [Return To Website](https://esem.sosyalgirisimcilikagi.org)
+</button>
+```
+
+where u need to use **markdown="1"** and need space before & after markdown row.
+
 # Structure
 
 Basic structure to be implemented from the start should be like
@@ -226,11 +239,20 @@ Even though there are several options as seen [here.](https://docs.streamlit.io/
 
 Do not forget to create your EC2 in the correct region.
 
+## Updates
+
+There are much easier ways to update your dashboard however at the current time without any knowledge whatsover about CD/CL integrations you can just pull the latest version inside the EC2 instance. If the dashboard is working in the tmux session it will automatically update the current version.
+
 # Templates
 
 # Future Discussions
 
-There are several aspects that can be improved but priorities must be defined more clearly before any improvement.
+There are several aspects that can be improved but priorities must be defined more clearly before any improvement. But the ones inside the priority section is important. The
+
+## Priority Needs
+
+- SSL sertificate adaption into the site.
+- Changing the domain of the Dashboard, especially when the website is a WordPress.
 
 ## Requirements
 
