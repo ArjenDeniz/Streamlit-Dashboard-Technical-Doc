@@ -11,7 +11,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
 - [Tips](#tips)
   - [Base theme](#defining-base-theme)
   - [Functions](#use-functions-even-for-st.markdown)
-  - [Applying CSS on streamlit template](#applying-CSS-on-the-streamlit-template)
+  - [Applying CSS on streamlit template](#applying-css-on-the-streamlit-template)
   - [Linked Button](#linked-button)
 - [Structure](#structure)
 - [Deployment](#deployment)
@@ -28,7 +28,7 @@ streamlit-option-menu
 
 ## Streamlit
 
-Be careful of the streamlit version, you are using!
+> :warning: **Be careful of the streamlit version, you are using**
 
 If you have trouble on having same filter keys or broken option-menu, the streamlit versiyon may be different than 1.9.0.
 
@@ -57,7 +57,7 @@ Therefore an alternative should be found in the future for basic reports that do
 
 [Streamlit-echarts](https://github.com/andfanilo/streamlit-echarts) is working like a converter, use dictionaries for any json relationship you see in e-charts examples. For any change on graph itself focus on [e-charts docs.](https://echarts.apache.org/en/api.html#echarts)
 
-Be careful: If there is a problem of generating a graph, problem is probably about the dict relations.
+> :warning: **If there is a problem of generating a graph**: problem is probably about the dictionary relations.
 
 ### How to make it responsive
 
@@ -67,7 +67,7 @@ You can set breaking points and styles for each break such as
 
 A media sequence to change font sizes after 400px
 
-Be careful, the width defined in e-charts are not the screen size its graph size.
+> :warning: **the width defined in e-charts are not the screen size its graph size.**
 
 you can look for more detail under its [own document](https://echarts.apache.org/en/api.html#echarts).
 
@@ -92,6 +92,8 @@ for only light design.
 
 ## **Use functions even for st.markdown**
 
+> :warning: **Do not copy and paste any st.markdown file**
+
 Do not copy and paste. I repeat do not copy and paste anything that you use more than once. This applies to anything from loading data, data manipulation or creating graphs and even your own design writings. When time comes to change them (several times) you will have hard time implementing on every single one of them.
 
 ### Creating functions for st.markdown
@@ -114,7 +116,7 @@ It is quite easy to cache any function you desire. Only put @st.cache before the
 
 ![Untitled](images/Untitled2.png)
 
-Note: especially use for loading data on several pages!!.
+Note: especially use for loading data on several pages!!
 
 You can check the **Templates** for filter and graph examples.
 
@@ -146,7 +148,7 @@ google developer console
 }
 ```
 
-Be careful if the style change that you implemented did not shown, use “ !important” after your argument(s).
+> :warning: **if the style change that you implemented did not shown** : use “!important” after your argument(s).
 
 ## Linked button
 
@@ -159,6 +161,8 @@ Weirdly enough streamlit buttons have hard time implementing any link inside. Wh
 ```
 
 where u need to use **markdown="1"** and need space before & after markdown row.
+
+> :warning: **if the markdown style did not work** : check the space before and after markdown.
 
 # Structure
 
@@ -173,7 +177,7 @@ Basic structure to be implemented from the start should be like
   - generalStyle.py
 - dashboard.py
 
-To start with basics, load all data on same folder for easier respective path. Same for images.
+To start with basics, load all data on same folder for easier respective path. Same for images. This kind of tree structure makes the finding of correct file easier.
 
 ## Dashboard.py
 
@@ -189,7 +193,9 @@ After you call option-menu, you can create each page in the menu separately as i
 
 where you defined each page in separate file by defining **\*\***\***\*\***create_page()**\*\***\***\*\*** function.
 
-Be careful, you only need to call style in the Dashboard. It will implement on all pages if you use a one liner in every page as
+> :warning: **you only need to call style in the Dashboard.**
+
+It will implement on all pages if you use a one liner in every page as
 
 ```python
 from dashboard import *
@@ -210,7 +216,7 @@ def create_page():
 
 ## Functions.py
 
-in this file, every repetative process talked in tips about functions must be implemented. For example each st_markdown that is used more than 1 must be created here so that any change in the function affects all pages.
+In this file, every repetative process talked in tips about functions must be implemented. For example each st_markdown that is used more than 1 must be created here so that any change in the function affects all pages.
 
 Note: A more structured functions folder can be created in the future.
 
@@ -237,7 +243,7 @@ Implement every design choice here.
 
 Even though there are several options as seen [here.](https://docs.streamlit.io/knowledge-base/deploy/deploy-streamlit-heroku-aws-google-cloud) We are currently using EC2 as explained in [this article](https://towardsdatascience.com/how-to-deploy-a-streamlit-app-using-an-amazon-free-ec2-instance-416a41f69dc3). It is easy to implement therefore the details will not be explained here.
 
-Do not forget to create your EC2 in the correct region.
+> :warning: **Do not forget to create your EC2 in the correct region.**
 
 ## Updates
 
