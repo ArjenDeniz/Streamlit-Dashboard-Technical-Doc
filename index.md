@@ -10,7 +10,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
   - [Streamlit-echarts](#streamlit-echarts)
 - [Tips](#tips)
   - [Base theme](#defining-base-theme)
-  - [Functions](#use-functions-even-for-st.markdown)
+  - [Functions](#use-functions-even-for-stmarkdown)
   - [Applying CSS on streamlit template](#applying-css-on-the-streamlit-template)
   - [Linked Button](#linked-button)
 - [Structure](#structure)
@@ -19,7 +19,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
 
 # Requirements
 
-```
+```python
 streamlit==1.9.0
 pandas
 streamlit-echarts
@@ -28,7 +28,7 @@ streamlit-option-menu
 
 ## Streamlit
 
-> :warning: **Be careful of the streamlit version, you are using**
+> ⚠️ **Be careful of the streamlit version, you are using**
 
 If you have trouble on having same filter keys or broken option-menu, the streamlit versiyon may be different than 1.9.0.
 
@@ -57,7 +57,7 @@ Therefore an alternative should be found in the future for basic reports that do
 
 [Streamlit-echarts](https://github.com/andfanilo/streamlit-echarts) is working like a converter, use dictionaries for any json relationship you see in e-charts examples. For any change on graph itself focus on [e-charts docs.](https://echarts.apache.org/en/api.html#echarts)
 
-> :warning: **If there is a problem of generating a graph**: problem is probably about the dictionary relations.
+> ⚠️ **If there is a problem of generating a graph**: problem is probably about the dictionary relations.
 
 ### How to make it responsive
 
@@ -67,7 +67,7 @@ You can set breaking points and styles for each break such as
 
 A media sequence to change font sizes after 400px
 
-> :warning: **the width defined in e-charts are not the screen size its graph size.**
+> ⚠️ **the width defined in e-charts are not the screen size its graph size.**
 
 you can look for more detail under its [own document](https://echarts.apache.org/en/api.html#echarts).
 
@@ -90,9 +90,9 @@ base="light"
 
 for only light design.
 
-## **Use functions even for st.markdown**
+## Use functions even for st.markdown
 
-> :warning: **Do not copy and paste any st.markdown file**
+> ⚠️ **Do not copy and paste any st.markdown file**
 
 Do not copy and paste. I repeat do not copy and paste anything that you use more than once. This applies to anything from loading data, data manipulation or creating graphs and even your own design writings. When time comes to change them (several times) you will have hard time implementing on every single one of them.
 
@@ -143,12 +143,12 @@ google developer console
 1. In your css you can change it by calling the class name
 
 ```css
-.**classname**{
-	**your style change**
+.classname{
+  your style change
 }
 ```
 
-> :warning: **if the style change that you implemented did not shown** : use “!important” after your argument(s).
+> ⚠️ **if the style change that you implemented did not shown** : use “!important” after your argument(s).
 
 ## Linked button
 
@@ -162,7 +162,7 @@ Weirdly enough streamlit buttons have hard time implementing any link inside. Wh
 
 where u need to use **markdown="1"** and need space before & after markdown row.
 
-> :warning: **if the markdown style did not work** : check the space before and after markdown.
+> ⚠️ **if the markdown style did not work** : check the space before and after markdown.
 
 # Structure
 
@@ -193,7 +193,7 @@ After you call option-menu, you can create each page in the menu separately as i
 
 where you defined each page in separate file by defining **\*\***\***\*\***create_page()**\*\***\***\*\*** function.
 
-> :warning: **you only need to call style in the Dashboard.**
+> ⚠️ **you only need to call style in the Dashboard.**
 
 It will implement on all pages if you use a one liner in every page as
 
@@ -235,15 +235,15 @@ def create_style():
 
 Implement every design choice here.
 
-- you can write it as you are inside <head></head> brackets.
+- you can write it as you are inside ```<head></head>``` brackets.
 - You can write any design choice here, so that you do not repeat yourself at every st.markdown.
-- After this implementation of design you do **not** need to create <head></head> brackets or CSS in any st.markdown.
+- After this implementation of design you do **not** need to create ```<head></head>``` brackets or CSS in any st.markdown.
 
 # Deployment
 
 Even though there are several options as seen [here.](https://docs.streamlit.io/knowledge-base/deploy/deploy-streamlit-heroku-aws-google-cloud) We are currently using EC2 as explained in [this article](https://towardsdatascience.com/how-to-deploy-a-streamlit-app-using-an-amazon-free-ec2-instance-416a41f69dc3). It is easy to implement therefore the details will not be explained here.
 
-> :warning: **Do not forget to create your EC2 in the correct region.**
+> ⚠️ **Do not forget to create your EC2 in the correct region.**
 
 ## Updates
 
@@ -260,7 +260,7 @@ There are several aspects that can be improved but priorities must be defined mo
 - SSL sertificate adaption into the site.
 - Changing the domain of the Dashboard, especially when the website is a WordPress.
 
-## Requirements
+## Requirements Discussion
 
 ### _Problems_
 
@@ -274,7 +274,7 @@ There are several aspects that can be improved but priorities must be defined mo
 - As an alternative for echarts; faster, easier to create graph library
 - A way to create sub-options in the menu
 
-## Structure
+## Structure Discussion
 
 For easier to return-read-share-improve-workTogether apps a more readable structure must be implemented. Functions can be divided into more files where each one works on a given concept/area such as only design functions, only data manipulation etc.
 
@@ -285,7 +285,7 @@ Much more important non-existing structure is on CSS. A more divided design must
 - Structured CSS files
 - A better way to call images than base64
 
-## Deployment
+## Deployment Discussion
 
 - How to deploy on azure?
 - A cheaper deployment suggestion for bigger projects that need more process power or connection count.
