@@ -36,7 +36,13 @@ If you have trouble on having same filter keys or broken option-menu, the stream
 
 It is a better looking option-menu then the original. It is quite easy to use and change as described in its [docs.](https://github.com/victoryhb/streamlit-option-menu)
 
-Only problem is the icon library, some works some doesn’t. Work with caution.
+### Sliding down bug
+
+Use the python file in the useful files folder once before deployment to solve the option menu's sliding down issue.
+
+> ⚠️ **You only need to run the file once**
+
+Only problem is the icon library, some works some doesn’t and couldn't find any solution. Work with caution.
 
 ## Streamlit-echarts
 
