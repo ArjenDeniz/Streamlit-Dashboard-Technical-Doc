@@ -3,4 +3,3 @@ plugins:
   - jekyll-remote-theme
 title: [Streamlit Tech Doc]
 description: [It is a basic guideline for streamlit web-apps]
-theme: merlot
