@@ -14,6 +14,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
   - [Functions](#use-functions-even-for-stmarkdown)
   - [Applying CSS on streamlit template](#applying-css-on-the-streamlit-template)
   - [Linked Button](#linked-button)
+  - [Use .gitignore](#use-gitignore)
 - [Structure](#structure)
 - [Deployment](#deployment)
 - [Future Discussions](#future-discussions)
@@ -189,6 +190,12 @@ where u need to use **markdown="1"** and need space before & after markdown row.
 
 > ⚠️ **if the markdown style did not work** : check the space before and after markdown.
 
+## Use gitignore
+
+After you start using caching there would be **pycache** creation that is unnecessary for the app to work on another system. Adding it to .gitignore file would help the size of the app and also prevent any unnecessary problems in deployment.
+
+> ⚠️ **if the pycache folder is still in commit** : check th.gitignore file and use examples [here](https://git-scm.com/docs/gitignore).
+
 # Structure
 
 Basic structure to be implemented from the start should be like
@@ -276,6 +283,10 @@ There are much easier ways to update your dashboard however at the current time 
 
 # Templates
 
+In the *useful files* folder, you can see simple templates for a couple of design and plot examples. There are also templates for filter, gitignore.
+
+> ⚠️ **Do not forget they are only templates**: they do not work perfectly without small adjustments.
+
 # Future Discussions
 
 There are several aspects that can be improved but priorities must be defined more clearly before any improvement. But the ones inside the priority section is important. The
@@ -287,14 +298,14 @@ There are several aspects that can be improved but priorities must be defined mo
 
 ## Requirements Discussion
 
-### _Problems_
+### *Problems*
 
 - streamlit version problems must be found & solved to use new improvements on streamlit.
 - option-menu is deteriorated a new solution may be necessary in the future
 - A better understanding of e_charts improves the capabilities
-  - An example case: We used for loops for coloring while it somehow accepts list of colors as an input.
+- An example case: We used for loops for coloring while it somehow accepts list of colors as an input.
 
-### _Improvement areas_
+### *Improvement areas*
 
 - As an alternative for echarts; faster, easier to create graph library
 - A way to create sub-options in the menu
