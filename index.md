@@ -9,6 +9,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
   - [Streamlit-option-menu](#streamlit-option-menu)
   - [Streamlit-echarts](#streamlit-echarts)
 - [Tips](#tips)
+  - [Increasing speed](#increasing-speed)
   - [Base theme](#defining-base-theme)
   - [Functions](#use-functions-even-for-stmarkdown)
   - [Applying CSS on streamlit template](#applying-css-on-the-streamlit-template)
@@ -79,7 +80,25 @@ you can look for more detail under its [own document](https://echarts.apache.org
 
 # Tips
 
-## **Defining base theme**
+## Increasing speed
+
+To increase the speed of the website, there are couple of tricks to apply.
+
+But the main difference can be made by paging your app. For example the same ESEM dashboard without creation of pages would be much slower since it will run the full code before starting. Using paging inside if functions as mentioned in [structure](#structure) makes the app faster to open.
+
+2nd biggest effect can be made by [caching](#using-stcache), especially while loading data. If there is any function that is repeated with same inputs use caching to increase the speed.
+
+After this processes you made all that can be done inside streamlit. However there are still small changes that can affect the speed. To be able to see them use [lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) chrome extension of Google. You can run it in local to get a report of your side.
+
+![Lighthouse extension](images/lighthouse.png)
+
+It will take some time to create report, be patient. After it finishes you will see a similar report to the below example.
+
+![lighthouse report](images/lighthouseReport.png)
+
+The report is very detailed, and would suggest solutions to the problems it finds. You can try to implement the ones you understand to improve the website. Unfortunately lots of js bundle problems cannot be changed without extensive knowledge of streamlit as streamlit dumbs a lot of js that is not used in the app.
+
+## Defining base theme
 
 Streamlit is an otomatically dual theme site generator, which means that the applications made by it has 2 theme options: light and dark. If you have only one style of design, change the base theme of the system. Otherwise it will change colours according to user’s preference.
 
@@ -216,8 +235,8 @@ from .functions import *
 from dashboard import *
 
 def create_page():
-	#all of the page structure inside
-	return True
+    #all of the page structure inside
+    return True
 ```
 
 ## Functions.py
@@ -232,11 +251,11 @@ basic structure should be similar to
 
 ```python
 def create_style():
-	styl= """
-	* meta tag, font links*
-	* all css inside *
-	"""
-	return styl
+    styl= """
+    * meta tag, font links*
+    * all css inside *
+    """
+    return styl
 ```
 
 Implement every design choice here.
@@ -253,7 +272,7 @@ Even though there are several options as seen [here.](https://docs.streamlit.io/
 
 ## Updates
 
-There are much easier ways to update your dashboard however at the current time without any knowledge whatsover about CD/CL integrations you can just pull the latest version inside the EC2 instance. If the dashboard is working in the tmux session it will automatically update the current version.
+There are much easier ways to update your dashboard however at the current time without any knowledge whatsover about CD/CL integrations you can just pull the latest version inside the EC2 instance. To pull you need to create tokens inside your github profile. And use it as the github password in the console. If the dashboard is working in the tmux session it will automatically update the current version.
 
 # Templates
 
