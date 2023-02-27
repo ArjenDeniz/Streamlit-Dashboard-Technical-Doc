@@ -288,7 +288,7 @@ In the *useful files* folder, you can see simple templates for a couple of desig
 
 > ⚠️ **Do not forget they are only templates**: they do not work perfectly without small adjustments.
 
-A basic starting template is coming soon !
+A basic starting template is coming soon ! (You can access it here:<https://github.com/ArjenDeniz/Streamlit-Dashboard-Technical-Doc>)
 
 # Future Discussions
 
