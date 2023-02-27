@@ -17,6 +17,7 @@ This document is meant to be a guideline for any dashboard creation by Streamlit
   - [Use .gitignore](#use-gitignore)
 - [Structure](#structure)
 - [Deployment](#deployment)
+- [Templates](#templates)
 - [Future Discussions](#future-discussions)
 
 # Requirements
@@ -283,9 +284,11 @@ There are much easier ways to update your dashboard however at the current time 
 
 # Templates
 
-In the *useful files* folder, you can see simple templates for a couple of design and plot examples. There are also templates for filter, gitignore.
+In the *useful files* folder, you can see simple templates for a couple of design and plot examples. There are also templates for filter, gitignore, etc.
 
 > ⚠️ **Do not forget they are only templates**: they do not work perfectly without small adjustments.
+
+A basic starting template is coming soon !
 
 # Future Discussions
 
