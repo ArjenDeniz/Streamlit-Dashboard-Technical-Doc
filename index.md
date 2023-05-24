@@ -82,6 +82,12 @@ you can look for more detail under its [own document](https://echarts.apache.org
 
 # Tips
 
+## Authenticator
+
+You can see the actual guide [here](https://blog.streamlit.io/streamlit-authenticator-part-1-adding-an-authentication-component-to-your-app/).
+> ⚠️ it has errors, be careful!
+[Github version](https://github.com/mkhorasani/Streamlit-Authenticator)
+
 ## Increasing speed
 
 To increase the speed of the website, there are couple of tricks to apply.
@@ -289,6 +295,13 @@ In the *useful files* folder, you can see simple templates for a couple of desig
 > ⚠️ **Do not forget they are only templates**: they do not work perfectly without small adjustments.
 
 A basic starting template is coming soon ! (You can access it here:<https://github.com/ArjenDeniz/Streamlit-Dashboard-Technical-Doc>)
+
+# Errors
+
+## Vegalite Version Issue
+
+If the streamlit gives an error about *streamlit-vega-lite.v4 does not exist*, this means you need to pip install *pip install streamlit-vega-lite = 4.0.0*.
+Since a newer version of package exist, error sometimes come from not having version 4 but higher.
 
 # Future Discussions
 
